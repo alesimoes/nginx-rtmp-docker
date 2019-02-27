@@ -36,7 +36,7 @@ RUN cd  /usr/src/nginx/nginx-1.7.4 && \
             --with-http_ssl_module && \  
             --without-http_proxy_module && \  
             --add-module=/usr/src/nginx/nginx-rtmp-module && \
-mkdir -p /var/www &&\
+mkdir -p /var/www && \
 make && \
 make install
 
