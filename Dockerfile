@@ -18,7 +18,8 @@ RUN mkdir -p /usr/src/nginx && \
     git clone git://github.com/arut/nginx-rtmp-module.git  && \
     wget http://nginx.org/download/nginx-1.7.4.tar.gz && \
     tar xzf nginx-1.7.4.tar.gz && \
-    cd nginx-1.7.4
+    cd nginx-1.7.4 && \
+    mkdir -p /var/www 
   
 
 
@@ -35,10 +36,7 @@ RUN cd  /usr/src/nginx/nginx-1.7.4 && \
             --http-log-path=/var/log/nginx/access.log  \  
             --with-http_ssl_module  \  
             --without-http_proxy_module  \  
-            --add-module=/usr/src/nginx/nginx-rtmp-module 
-
-# Install
-RUN mkdir -p /var/www && \
+            --add-module=/usr/src/nginx/nginx-rtmp-module && \
 make && \
 make install
 
