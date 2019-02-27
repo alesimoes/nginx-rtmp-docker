@@ -1,6 +1,6 @@
 ## Supported tags and respective `Dockerfile` links
 
-* [`latest` _(Dockerfile)_](https://github.com/tiangolo/nginx-rtmp-docker/blob/master/Dockerfile)
+* [`latest` _(Dockerfile)_](https://github.com/alesimoes/nginx-rtmp-docker/blob/master/Dockerfile)
 
 # nginx-rtmp
 
