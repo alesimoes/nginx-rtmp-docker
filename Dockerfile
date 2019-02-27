@@ -2,9 +2,6 @@ FROM buildpack-deps:stretch
 
 LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com"
 
-# Versions of Nginx and nginx-rtmp-module to use
-ENV NGINX_VERSION nginx-1.15.0
-ENV NGINX_RTMP_MODULE_VERSION 1.2.1
 
 # Install dependencies
 RUN apt-get update && \
@@ -29,7 +26,8 @@ RUN mkdir -p /usr/src/nginx && \
 # Build and install Nginx
 # The default puts everything under /usr/local/nginx, so it's needed to change
 # it explicitly. Not just for order but to have it in the PATH
-RUN ./configure --prefix=/var/www && \  
+RUN cd  /usr/src/nginx/nginx-1.7.4 && \ 
+            ./configure --prefix=/var/www && \  
             --sbin-path=/usr/sbin/nginx && \  
             --conf-path=/etc/nginx/nginx.conf && \  
             --pid-path=/var/run/nginx.pid && \  
@@ -40,8 +38,7 @@ RUN ./configure --prefix=/var/www && \
             --add-module=/usr/src/nginx/nginx-rtmp-module && \
 mkdir -p /var/www &&\
 make && \
-make install &&\
-
+make install
 
 # Set up config file
 COPY nginx.conf /etc/nginx/nginx.conf
