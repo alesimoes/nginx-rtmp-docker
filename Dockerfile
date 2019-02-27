@@ -10,10 +10,10 @@ ENV NGINX_RTMP_MODULE_VERSION 1.2.1
 RUN apt-get update && \
     apt-get install -y ca-certificates openssl libssl-dev && \
     apt-get install -y curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev   && \
-    apt-get -y install nginx   
-    apt-get -y install git   
-    apt-get -y remove nginx   
-    rm -rf /var/lib/apt/lists/*
+    apt-get -y install nginx   && \
+    apt-get -y install git   && \
+    apt-get -y remove nginx   && \
+    rm -rf /var/lib/apt/lists/* 
 
 # Download and decompress Nginx nad Ngnix rtmp
 RUN mkdir -p /usr/src/nginx && \
