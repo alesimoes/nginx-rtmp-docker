@@ -33,8 +33,7 @@ RUN cd  /usr/src/nginx/nginx-1.7.4 && \
             --conf-path=/etc/nginx/nginx.conf  \  
             --pid-path=/var/run/nginx.pid  \  
             --error-log-path=/var/log/nginx/error.log  \  
-            --http-log-path=/var/log/nginx/access.log  \  
-            --with-http_ssl_module  \  
+            --http-log-path=/var/log/nginx/access.log  \             
             --without-http_proxy_module  \  
             --add-module=/usr/src/nginx/nginx-rtmp-module && \
 make && \
