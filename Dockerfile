@@ -27,15 +27,15 @@ RUN mkdir -p /usr/src/nginx && \
 # The default puts everything under /usr/local/nginx, so it's needed to change
 # it explicitly. Not just for order but to have it in the PATH
 RUN cd  /usr/src/nginx/nginx-1.7.4 && \ 
-            ./configure --prefix=/var/www && \  
-            --sbin-path=/usr/sbin/nginx && \  
-            --conf-path=/etc/nginx/nginx.conf && \  
-            --pid-path=/var/run/nginx.pid && \  
-            --error-log-path=/var/log/nginx/error.log && \  
-            --http-log-path=/var/log/nginx/access.log && \  
-            --with-http_ssl_module && \  
-            --without-http_proxy_module && \  
-            --add-module=/usr/src/nginx/nginx-rtmp-module && \
+            ./configure --prefix=/var/www  \  
+            --sbin-path=/usr/local/sbin/nginx  \  
+            --conf-path=/etc/nginx/nginx.conf  \  
+            --pid-path=/var/run/nginx.pid  \  
+            --error-log-path=/var/log/nginx/error.log  \  
+            --http-log-path=/var/log/nginx/access.log  \  
+            --with-http_ssl_module  \  
+            --without-http_proxy_module  \  
+            --add-module=/usr/src/nginx/nginx-rtmp-module \
 mkdir -p /var/www && \
 make && \
 make install
