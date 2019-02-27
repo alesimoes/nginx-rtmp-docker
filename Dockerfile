@@ -4,8 +4,7 @@ LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com"
 
 
 # Install dependencies
-RUN apt-get update && \
-    apt-get install -y ca-certificates openssl libssl-dev && \
+RUN apt-get update && \ 
     apt-get install -y curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev   && \
     apt-get -y install nginx   && \
     apt-get -y install git   && \
@@ -34,7 +33,7 @@ RUN cd  /usr/src/nginx/nginx-1.7.4 && \
             --pid-path=/var/run/nginx.pid  \  
             --error-log-path=/var/log/nginx/error.log  \  
             --http-log-path=/var/log/nginx/access.log  \  
-            --without-http_ssl_module  \  
+            --with-http_ssl_module  \  
             --without-http_proxy_module  \  
             --add-module=/usr/src/nginx/nginx-rtmp-module && \
 make && \
