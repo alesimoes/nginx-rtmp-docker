@@ -14,9 +14,9 @@ This was inspired by other similar previous images from [dvdgiessen](https://hub
 
 The main purpose (and test case) to build it was to allow streaming from [**OBS Studio**](https://obsproject.com/) to different clients at the same time.
 
-**GitHub repo**: <https://github.com/tiangolo/nginx-rtmp-docker>
+**GitHub repo**: <https://github.com/alesimoes/nginx-rtmp-docker>
 
-**Docker Hub image**: <https://hub.docker.com/r/tiangolo/nginx-rtmp/>
+**Docker Hub image**: <https://hub.docker.com/r/axconn/nginx-rtmp/>
 
 ## Details
 
@@ -25,7 +25,7 @@ The main purpose (and test case) to build it was to allow streaming from [**OBS 
 * For the simplest case, just run a container with this image:
 
 ```bash
-docker run -d -p 1935:1935 --name nginx-rtmp tiangolo/nginx-rtmp
+docker run -d -p 1935:1935 --name nginx-rtmp axconn/nginx-rtmp
 ```
 
 ## How to test with OBS Studio and VLC
