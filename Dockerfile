@@ -4,7 +4,6 @@ LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com>"
 
 
 # Install dependencies
-RUN apt-get update 
 RUN apt-get install -y curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev 
 RUN apt-get -y install nginx  
 RUN apt-get -y install git   
