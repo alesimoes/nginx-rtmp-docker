@@ -1,6 +1,6 @@
 FROM armhfbuild/debian:jessie
 
-LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com"
+LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com>"
 
 
 # Install dependencies
