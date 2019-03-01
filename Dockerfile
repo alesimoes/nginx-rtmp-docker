@@ -1,15 +1,13 @@
-FROM armv7/armhf-debian:latest
+FROM armhfbuild/debian:jessie
 
 LABEL maintainer="Alexandre Simoes <al.simoes@outlook.com>"
 
-RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
-RUN echo "deb-src http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list
 
 # Install dependencies
 RUN apt-get -y update
 RUN apt-get install -y curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev 
 RUN apt-get -y install nginx  
-RUN apt-get -y install git   
+RUN apt-get -y install git wget  
 RUN apt-get -y remove nginx  
 
 
