@@ -12,13 +12,13 @@ RUN apt-get -y remove nginx
 
 
 # Download and decompress Nginx nad Ngnix rtmp
-RUN mkdir -p /usr/src/nginx && \
+RUN ["/bin/bash", "-c", "mkdir -p /usr/src/nginx && \
     cd /usr/src/nginx && \
     git clone git://github.com/arut/nginx-rtmp-module.git  && \
     wget http://nginx.org/download/nginx-1.15.7.tar.gz && \
     tar xzf nginx-1.15.8.tar.gz && \
     cd nginx-1.15.8 && \
-    mkdir -p /var/www 
+    mkdir -p /var/www" 
   
 
 
